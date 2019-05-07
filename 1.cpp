@@ -27,10 +27,6 @@ int main(void){
 					arr[j] = arr[j+1];
 				}
 				//把长度减减 
-				for(int j = 0;j<newLength;j++){
-					printf("%c",arr[j]);
-				}
-				printf("\n");
 				newLength--;
 				i=-1;
 			}
