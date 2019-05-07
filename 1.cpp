@@ -3,7 +3,7 @@
 #define M 100
 int main(void){
 	int n,length;
-	//ÊäÈëÒªÉ¾µÄÊıµÄ¸öÊı 
+	//è¾“å…¥è¦åˆ çš„æ•°çš„ä¸ªæ•° 
 	char arr[M]; 
 	scanf("%d",&n);
 	scanf("%s",arr);
@@ -13,19 +13,20 @@ int main(void){
 	}else if(n>=length){
 		return 0;
 	}else{
-		int i = 0;//¼ÇÂ¼ÏÂ±ê£¬¿´¿´ÓĞÃ»ÓĞ×ßµ½×îºó 
-		int num = 0;//¼ÇÂ¼É¾ÊıµÄ¸öÊı 
+		int i = 0;//è®°å½•ä¸‹æ ‡ï¼Œçœ‹çœ‹æœ‰æ²¡æœ‰èµ°åˆ°æœ€å 
+		int num = 0;//è®°å½•åˆ æ•°çš„ä¸ªæ•° 
 		int newLength = length; 
-		while(i<newLength&&num<=n){
-			//´ÓÍ·¿ªÊ¼ÕÒ 
-			//Èç¹û²úÉúÁËÄæĞò
+		//new Length-1æ˜¯ä¸ºäº†é˜²æ­¢å’Œ'\0'äº¤æ¢äº§ç”Ÿé€†åº
+		while(i<newLength-1&&num<=n){
+			//ä»å¤´å¼€å§‹æ‰¾ 
+			//å¦‚æœäº§ç”Ÿäº†é€†åº
 			if(arr[i]>arr[i+1]){
 				num++;
-				//°ÑÊı×ÖÍùÇ°ÒÆ 
+				//æŠŠæ•°å­—å¾€å‰ç§» 
 				for(int j = i;j<newLength;j++){
 					arr[j] = arr[j+1];
 				}
-				//°Ñ³¤¶È¼õ¼õ 
+				//æŠŠé•¿åº¦å‡å‡ 
 				for(int j = 0;j<newLength;j++){
 					printf("%c",arr[j]);
 				}
@@ -36,7 +37,6 @@ int main(void){
 			i++;
 		}
 	}
-//	printf("%d %d %d\n",length,n,length-n);
 	for(int i = 0;i<length-n;i++){
 		printf("%c",arr[i]);
 	}
